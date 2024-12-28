@@ -1,14 +1,17 @@
 import './App.css';
-
+import Navbar from './Components/Navbar';
 import React, { Component } from 'react'
+import News from './Components/News';
+import Newsitem from './Newsitem';
 
 export default class App extends Component {
- c='venkat';
 
   render() {
     return (
       <div>
-        Hello {this.c}
+      this is news cccomponent
+      <Newsitem/>
+      
       </div>
     )
   }
