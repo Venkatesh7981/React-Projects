@@ -1,18 +1,17 @@
-import './App.css';
+import React, { Component } from 'react';
 import Navbar from './Components/Navbar';
-import React, { Component } from 'react'
 import News from './Components/News';
-import Newsitem from './Newsitem';
+import './App.css';
 
-export default class App extends Component {
-
+class App extends Component {
   render() {
     return (
       <div>
-      this is news cccomponent
-      <Newsitem/>
-      
+        <Navbar title="NewsMonkey" aboutText="About Us" />
+        <News />
       </div>
-    )
+    );
   }
 }
+
+export default App;
