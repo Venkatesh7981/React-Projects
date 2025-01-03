@@ -31,7 +31,7 @@ export class News extends Component {
     }
     async updateNews(pageNo){
       this.props.setProgress(10);
-    let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=60352f91498743a2a432af1d09600a19&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+      let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=60352f91498743a2a432af1d09600a19&page=${this.state.page}&pageSize=${this.props.pageSize}`;
       this.setState({loading:true})
       let data= await fetch(url);
       this.props.setProgress(30);
@@ -74,8 +74,6 @@ export class News extends Component {
 
 
 
-
-
   render() {
     return (
       <>
@@ -83,11 +81,11 @@ export class News extends Component {
         {this.state.loading && <Spinner/> }
        
         <InfiniteScroll
-        dataLength={this.state.articles.length}
-        next={this.fetchMoreData}
-        hasMore={this.state.articles.length!==this.state.totalResults}
-        loader={<Spinner/>}
-        >
+  dataLength={this.state.articles.length} // Access articles length from state
+  next={this.fetchMoreData}
+  hasMore={this.state.articles.length < this.state.totalResults} // Corrected: Access totalResults from state
+  loader={<Spinner />}
+>
            <div className='container '>
           
         <div className="row">
