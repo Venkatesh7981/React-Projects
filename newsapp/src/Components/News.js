@@ -77,7 +77,7 @@ export class News extends Component {
   render() {
     return (
       <>
-        <center><h2 className="text-center" style={{padding: '15px 10px',color: 'black', margin: '30px 0px'}}>NewsApp-Top {this.capitalize(this.props.category)} Headlines</h2></center>
+        <center><h2 className="text-center" style={{padding: '15px 10px',color: 'black', margin: '30px 0px',marginTop:'90px'}}>NewsApp-Top {this.capitalize(this.props.category)} Headlines</h2></center>
         {this.state.loading && <Spinner/> }
        
         <InfiniteScroll
@@ -104,6 +104,7 @@ export class News extends Component {
         <button type="button" disabled={this.state.page<=1} className="btn btn-dark" onClick={this.handlePrevClick}> &larr; Previous</button>
         <button type="button" disabled={this.state.page+1>Math.ceil(this.state.totalResults/this.props.pageSize)}className="btn btn-dark"onClick={this.handleNextClick}>Next &rarr;</button>
         </div> */}
+
 
       </>
     )

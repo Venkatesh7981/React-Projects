@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ toggleTheme, theme }) => {
   return (
-    <nav className={`navbar navbar-expand-lg navbar-${theme} bg-${theme}`}>
+    <nav className={`navbar fixed-top navbar-expand-lg navbar-${theme} bg-${theme}`}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           NewsApp
